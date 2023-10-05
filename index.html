@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split</title>
+</head>
+<body>
+    <p>Split</p>
+    <div class="split-input-grid">
+        <select class="js-name-selection">
+            <option value="Tânia">Tânia</option>
+            <option value="Sandro">Sandro</option>
+        </select>
+        <input placeholder="Despesa"
+            class="js-expense-input expense-input">
+        <input placeholder="€"
+            class="js-value-cash-input">
+        <input type="date" id="data" 
+            class="js-due-date-input due-date-input">
+        <button onclick="
+            addExpense ();
+        " class="add-split-button js-add-split-button">Add</button>
+    </div>
+    <div class="js-split-list split-grid"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
