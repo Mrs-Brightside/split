@@ -3,32 +3,17 @@ const dataAtual = new Date();
 // Define a data pré-definida
 document.getElementById("data").value = dataAtual.toISOString().slice(0, 10);
 
+const name = document.querySelector('.js-name-selection').value;
+const expense = document.querySelector('.js-expense-input').value;
+const cashValue = document.querySelector('.js-value-cash-input').value;
+const dueDate = document.querySelector('.js-due-date-input').value;
 
-const nameSelection = document.querySelector('.js-name-selection');
-const name = nameSelection.value
-
-const inputElement = document.querySelector('.js-expense-input');
-const expense = inputElement.value
-
-const cashValueInput = document.querySelector('.js-value-cash-input');
-const cashValue = cashValueInput.value
-
-const dateInputElement = document.querySelector('.js-due-date-input');
-const dueDate = dateInputElement.value;
-
-const expensesSplit = [{
-    name,
-    expense,
-    cashValue,
-    dueDate,
-}];
-
-
+const expensesSplit = [];
 
 function renderExpensesData() {
     let splitListHTML = '';
 
-    for (let i = 1; i < expensesSplit.length; i++) {
+    for (let i = 0; i < expensesSplit.length; i++) {
         const splitObject = expensesSplit[i];
         const {name, expense, cashValue, dueDate} = splitObject;
         const html = `
@@ -48,7 +33,7 @@ function renderExpensesData() {
         </div>
          
         <button onclick="
-            splitList.splice(${i}, 1);
+            expensesSplit.splice(${i}, 1);
             renderExpensesData();
         " class="delete-split-button">Delete</button>
         
@@ -61,17 +46,10 @@ function renderExpensesData() {
 }
 
 function addExpense () {
-    const nameSelection = document.querySelector('.js-name-selection');
-    const name = nameSelection.value
-
-    const inputElement = document.querySelector('.js-expense-input');
-    const expense = inputElement.value
-
-    const cashValueInput = document.querySelector('.js-value-cash-input');
-    const cashValue = cashValueInput.value
-    
-    const dateInputElement = document.querySelector('.js-due-date-input');
-    const dueDate = dateInputElement.value;
+    const name = document.querySelector('.js-name-selection').value;
+    const expense = document.querySelector('.js-expense-input').value;
+    const cashValue = document.querySelector('.js-value-cash-input').value;
+    const dueDate = document.querySelector('.js-due-date-input').value;
 
     expensesSplit.push({
         name,
@@ -79,10 +57,10 @@ function addExpense () {
         cashValue,
         dueDate,
     });
-
-    inputElement.value ='';
-    cashValueInput.value='';
-    dateInputElement.value=dataAtual.toISOString().slice(0, 10);
+    //limpar valores dos inputs
+    expense.value ='';
+    cashValue.value='';
+    dueDate.value=dataAtual.toISOString().slice(0, 10);
 
     renderExpensesData();
 }
