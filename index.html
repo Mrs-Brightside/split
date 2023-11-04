@@ -4,26 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Split</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <p>Split</p>
-    <div class="split-input-grid">
-        <select class="js-name-selection">
-            <option value="Tânia">Tânia</option>
-            <option value="Sandro">Sandro</option>
+    <p class="title">Split</p>
+    <div class="sub-title">
+        <p>2023</p>
+        <select class="js-month-selection">
+            <option value="janeiro">Janeiro</option>
+            <option value="fevereiro">Fevereiro</option>
+            <option value="março">Março</option>
+            <option value="abril">Abril</option>
+            <option value="maio">Maio</option>
+            <option value="junho">Junho</option>
+            <option value="julho">Julho</option>
+            <option value="agosto">Agosto</option>
+            <option value="setembro">Setembro</option>
+            <option value="outubro">Outubro</option>
+            <option value="novembro">Novembro</option>
+            <option value="dezembro">Dezembro</option>
         </select>
-        <input placeholder="Despesa"
-            class="js-expense-input expense-input">
-        <input placeholder="€"
-            class="js-value-cash-input">
-        <input type="date" id="data" 
-            class="js-due-date-input due-date-input">
-        <button onclick="
-            addExpense ();
-        " class="add-split-button js-add-split-button">Add</button>
     </div>
-    <div class="js-split-list split-grid"></div>
+
+    <div class="boards">
+        <button onclick="openPopUp()">Open Pop-up</button>
+        
+        <div id="popup" class="split-input-grid" style="display: none;">
+            <select class="js-name-selection">
+                <option value="Tânia">Tânia</option>
+                <option value="Sandro">Sandro</option>
+            </select>
+            <input placeholder="Despesa"
+                class="js-expense-input expense-input">
+            <input placeholder="€"
+                class="js-value-cash-input">
+            <input type="date" id="data" 
+                class="js-due-date-input due-date-input">
+            <button onclick="
+                addExpense ()
+                closePopUp();
+                getTaniaTotal();
+                getSandroTotal();
+                calculateTotal();
+                calculateDiference();
+                calculateDiferenceGeral();
+            " class="add-split-button js-add-split-button">Add</button>
+        </div>
+        
+        <div>
+            <div class="js-tania-expenses expenses-board">
+                <p>Tânia</p>
+                <p class="js-total-tania total-month"></p>
+                <p class="js-diference-tania diference"></p>
+            </div>
+            <div class="js-split-list-tania split-grid-tania"></div>
+        </div>
+
+        <div>
+            <div class="js-sandro-expenses expenses-board">
+                <p>Sandro</p>
+                <p class="js-total-sandro total-month"></p>
+                <p class="js-diference-sandro diference"></p>
+            </div>
+            <div class="js-split-list-sandro split-grid-sandro"></div>
+        </div>
+        
+        <div class="total-year">
+            <div class="total-year-tania">
+                <p>Tânia</p>
+                <p class="js-total-geral-tania">135€</p>
+                <div class="js-dif-T">5</div>
+            </div>
+            <div class="total-year-sandro">
+                <p>Sandro</p>
+                <p class="js-total-geral-sandro">356€</p>
+                <div class="js-dif-S">5</div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+

@@ -1,0 +1,13 @@
+.sub-title, .boards, .expenses-line {
+    display: flex;
+    flex-direction: row;
+}
+
+.expenses-line {
+    gap: 10px;
+}
+
+.split-grid-tania, .split-grid-sandro {
+    border: 1px red solid;
+    width: 600px;
+}
