@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Split</title>
+    <link rel="icon" type="image/x-icon" href="/split/images/divide.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <p class="title">Split</p>
     <div class="sub-title">
-        <p>2023</p>
-        <select class="js-month-selection">
+        <p class="year">2023</p>
+        <select class="js-month-selection month">
             <option value="janeiro">Janeiro</option>
             <option value="fevereiro">Fevereiro</option>
             <option value="março">Março</option>
@@ -27,17 +28,17 @@
     </div>
 
     <div class="boards">
-        <button onclick="openPopUp()">Open Pop-up</button>
+        <button class="popup-button" onclick="openPopUp()"></button>
         
         <div id="popup" class="split-input-grid" style="display: none;">
-            <select class="js-name-selection">
+            <select class="js-name-selection name-selection">
                 <option value="Tânia">Tânia</option>
                 <option value="Sandro">Sandro</option>
             </select>
             <input placeholder="Despesa"
                 class="js-expense-input expense-input">
             <input placeholder="€"
-                class="js-value-cash-input">
+                class="js-value-cash-input value-cash-input">
             <input type="date" id="data" 
                 class="js-due-date-input due-date-input">
             <button onclick="
@@ -48,37 +49,45 @@
                 calculateTotal();
                 calculateDiference();
                 calculateDiferenceGeral();
-            " class="add-split-button js-add-split-button">Add</button>
+            " class="add-split-button js-add-split-button"></button>
         </div>
         
-        <div>
+        <div class="tania-card">
             <div class="js-tania-expenses expenses-board">
-                <p>Tânia</p>
-                <p class="js-total-tania total-month"></p>
-                <p class="js-diference-tania diference"></p>
+                <p class="tania-tab">Tânia</p>
+                <div class="calculos">
+                    <p class="js-diference-tania diference"></p>
+                    <p class="js-total-tania total-month"></p>
+                </div>
             </div>
-            <div class="js-split-list-tania split-grid-tania"></div>
+            <div class="js-split-list-tania split-grid"></div>
         </div>
 
-        <div>
+        <div class="sandro-card">
             <div class="js-sandro-expenses expenses-board">
-                <p>Sandro</p>
-                <p class="js-total-sandro total-month"></p>
-                <p class="js-diference-sandro diference"></p>
+                <p class="sandro-tab">Sandro</p>
+                <div class="calculos">
+                    <p class="js-diference-sandro diference"></p>
+                    <p class="js-total-sandro total-month"></p>
+                </div>
             </div>
-            <div class="js-split-list-sandro split-grid-sandro"></div>
+            <div class="js-split-list-sandro split-grid"></div>
         </div>
         
         <div class="total-year">
             <div class="total-year-tania">
-                <p>Tânia</p>
-                <p class="js-total-geral-tania">135€</p>
-                <div class="js-dif-T">5</div>
+                <p class="total-tania-text">Tânia</p>
+                <div class="diference-align">
+                    <p class="js-total-geral-tania total-tania">135€</p>
+                    <div class="js-dif-T total-diference-tania">5</div>
+                </div>
             </div>
             <div class="total-year-sandro">
-                <p>Sandro</p>
-                <p class="js-total-geral-sandro">356€</p>
-                <div class="js-dif-S">5</div>
+                <p class="total-sandro-text">Sandro</p>
+                <div class="diference-align">
+                    <p class="js-total-geral-sandro total-sandro">356€</p>
+                    <div class="js-dif-S total-diference-sandro">5</div>
+                </div>
             </div>
         </div>
     </div>

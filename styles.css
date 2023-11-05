@@ -1,6 +1,58 @@
-.sub-title, .boards, .expenses-line {
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Istok Web', sans-serif;
+    background-color:  #F5F5F5;
+    font-size: 18px;
+}
+
+.title {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 35px;
+    padding: 15px;
+    background: url(/split/images/divide.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 110px 20px;
+}
+
+.year, .month {
+    font-size: 28px;
+}
+
+.sub-title {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-left: 261px;
+    margin-bottom: 20px;
+}
+
+.month {
+    background-color: white;
+    border: none;
+    border-radius: 35px;
+    padding: 5px 45px 5px 20px;
+    margin-left: 15px;
+}
+
+select {
+    background: url(/split/images/down-arrow.png);
+    background-position: 93.5%;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.boards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .expenses-line {
@@ -8,6 +60,238 @@
 }
 
 .split-grid-tania, .split-grid-sandro {
-    border: 1px red solid;
     width: 600px;
+}
+
+.tania-card, .sandro-card {
+    width: 420px;
+    height: 580px;
+    border-radius: 30px;
+    padding: 20px;
+    margin:5px;
+    background-color: white;
+}
+
+
+.delete-img {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: none;
+    background: url(/split/images/recycle-bin.png);
+    background-size: 18px;
+    background-repeat: no-repeat;
+
+}
+
+.delete-img:hover {
+    transform:scale(1.1) 
+}
+
+.tania-tab, .sandro-tab {
+    font-size: 30px;
+    background-color: white;
+   
+}
+
+.tania-tab {
+    color: #FF005C;
+}
+
+.sandro-tab {
+    color: #0075FF
+}
+
+.expenses-board {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    background-color: white;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(130, 130, 130);
+    padding-bottom: 12px;
+}
+
+.total-month {
+    font-size: 28px;
+    background-color: white;
+}
+
+.diference {
+    background-color: white;
+    color: rgb(130, 130, 130);
+    margin-right: 15px;
+}
+
+.calculos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    justify-content: flex-end;
+}
+
+.split-grid {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 15px;
+}
+
+.expenses-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.values-bin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    justify-content: flex-end;
+}
+
+.valor-despesa {
+    background-color: white;
+    margin-right: 10px;
+}
+
+.remove-background {
+    background-color: white;
+    border: none;
+}
+
+.popup-button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: url(../split/images/add.png);
+    background-size: 50px;
+    margin-top: 535px;
+    margin-right: 5px;
+    border: none;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.popup-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transform:scale(1.1)
+}
+
+.total-year {
+    display: flex;
+    flex-direction: column;
+}
+
+.total-year-tania, .total-year-sandro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 17%;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 5px;
+
+}
+
+.total-year-tania {
+    background-color: #fff8fe;
+    border: 1px solid #FF005C;
+}
+
+.total-year-sandro {
+    background-color: #f9fcff;
+    border: 1px solid #0075FF;
+}
+
+.total-tania-text, .total-tania {
+    background-color: #fff8fe;
+    color: #FF005C;
+}
+
+.total-sandro-text, .total-sandro {
+    background-color: #f9fcff;
+    color: #0075FF;
+}
+
+.total-tania, .total-sandro {
+    font-size: 35px;
+}
+
+.diference-align {
+    display: flex;
+    flex-direction: row;
+    
+    background-color: transparent;
+    align-content: center;
+}
+
+.total-diference-tania {
+    background-color: #fff8fe;
+    color: #FF005C;
+    align-self: center;
+    padding-left: 15px;
+}
+
+.total-diference-sandro {
+    background-color: #f9fcff;
+    color: #0075FF;
+    align-self: center;
+    padding-left: 15px;
+}
+
+.split-input-grid {
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    width: 200px;
+    height: 300px;
+    margin: 5px;
+    margin-top: 325px;
+}
+
+.name-selection {
+    border-radius: 25px;
+    border: 1px solid rgb(205, 205, 205);
+    width: 100px;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+}
+
+.expense-input, .value-cash-input, .due-date-input {
+    background-color: white;
+    width: 94%;
+    margin: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    color: grey;
+    padding-right: 10px;
+}
+
+.add-split-button {
+    background: url(/split/images/add\ \(1\).png);
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 40%;
+    background-size: 27px;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    border-radius: 15px;
+    border: none;
+}
+
+.add-split-button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transform:scale(1.1)
 }
