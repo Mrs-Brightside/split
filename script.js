@@ -1,4 +1,3 @@
-
 const dataAtual = new Date()
     document.getElementById("data").value = dataAtual.toISOString().slice(0, 10);
 
@@ -80,7 +79,7 @@ let totalGeralTania = 0;
 let totalGeralSandro = 0;
 
 function getTaniaTotal() {
-  const expensesTania = JSON.parse(localStorage.getItem("expensesTania"));
+  const expensesTania = JSON.parse(localStorage.getItem("expensesTania")) || [];
   totalTania = 0;
 
   let filteredExpensesTania = expensesTania.filter((expense) => {
@@ -100,7 +99,7 @@ function getTaniaTotal() {
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function getSandroTotal() {
-  const expensesSandro = JSON.parse(localStorage.getItem("expensesSandro"));
+  const expensesSandro = JSON.parse(localStorage.getItem("expensesSandro")) || [];
   totalSandro = 0;
 
   let filteredExpensesSandro = expensesSandro.filter((expense) => {
@@ -140,8 +139,8 @@ function calculateDiference() {
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 function calculateTotal() {
-  const expensesTania = JSON.parse(localStorage.getItem("expensesTania"));
-  const expensesSandro = JSON.parse(localStorage.getItem("expensesSandro"));
+  const expensesTania = JSON.parse(localStorage.getItem("expensesTania")) || [];
+  const expensesSandro = JSON.parse(localStorage.getItem("expensesSandro")) || [];
   totalGeralTania = 0;
   totalGeralSandro = 0;
 
@@ -209,7 +208,7 @@ function renderExpensesDataTania() {
             </div>
 
             <button onclick="
-                const index = expensesTania.findIndex(e => e.expense === '${expense}' || e.cashValue === '${cashValue}' || e.dueDate === '${dueDate}');
+                const index = expensesTania.findIndex(e => e.expense === '${expense}' && e.cashValue === '${cashValue}' && e.dueDate === '${dueDate}');
                 if (index !== -1) {
                     expensesTania.splice(index, 1);
                 }
